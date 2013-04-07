@@ -5,7 +5,7 @@
 	"type": "web",
 	"main": "index.html",
 	"title": "Isis Web",
-	"keywords" : [ "web", "Browser", "Blazer", "Internet" ],
+	"keywords" : [ "web", "Browser", "Blazer", "Internet", "Juno", "Avalon", "Isis", "Osiris", "shindig" ],
 	"icon": "icon.png",
 	"splashicon": "icon-256x256.png",
 	"uiRevision": 2,
