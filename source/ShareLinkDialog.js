@@ -30,9 +30,9 @@ enyo.kind({
         type: "messaging",
         exists: true
     },{
-        title: "Sparrow",
+        title: "Carbon",
         image: "images/icons/sparrow-32x32.png",
-        type: "sparrow",
+        type: "carbon",
         checkExistance: true
     },{
         title: "Facebook",
@@ -149,8 +149,8 @@ enyo.kind({
         if (!shareService.exists) {
             if (shareServiceType === "facebook") {
                 this.downloadFacebookApp();
-            } else if (shareServiceType === "sparrow") {
-                this.downloadSparrowApp();
+            } else if (shareServiceType === "carbon") {
+                this.downloadCarbonApp();
             }
             return true;
         }
@@ -161,8 +161,8 @@ enyo.kind({
             this.shareLinkViaMessaging();
         } else if (shareServiceType === "facebook") {
             this.shareLinkViaFacebook();
-          } else if (shareServiceType === "sparrow") {
-          this.shareLinkViaSparrow();
+          } else if (shareServiceType === "carbon") {
+          this.shareLinkViaCarbon();
           }
         this.close();
     },
@@ -183,10 +183,10 @@ enyo.kind({
         };
         this.$.launchApplicationService.call({id: "com.palm.app.messaging", params: params});
     },
-    shareLinkViaSparrow: function () {
+    shareLinkViaCarbon: function () {
           var params = {
-          windowType: "newTweet",
-          tweetText: "Check out this web page: " + this.url
+          action: "compose",
+          body: "Check out this web page: " + this.url
           };
           this.$.launchApplicationService.call({id: "com.appstuh.sparrow", params: params});
         },
@@ -195,18 +195,18 @@ enyo.kind({
             type: "status",
             statusText: $L("Check out this web page: ") + this.url
         };
-        this.$.launchApplicationService.call({id: "com.palm.app.enyo-facebook", params: params});
+        this.$.launchApplicationService.call({id: "com.palm.app.facebook", params: params});
     },
     downloadFacebookApp: function () {
         this.log("Launching app catalog to download facebook");
         this.$.appCatalogService.call({id: "com.palm.app.enyo-findapps", params: {
-            target: "http://developer.palm.com/appredirect/?packageid=com.palm.app.enyo-facebook"
+            target: "http://developer.palm.com/appredirect/?packageid=com.palm.app.facebook"
         }});
     },
-    downloadSparrowApp: function () {
-        this.log("Launching app catalog to download Sparrow");
+    downloadCarbonApp: function () {
+        this.log("Launching app catalog to download Carbon");
         this.$.appCatalogService.call({id: "com.palm.app.enyo-findapps", params: {
-            target: "http://developer.palm.com/appredirect/?packageid=com.appstuh.sparrow"
+            target: "http://developer.palm.com/appredirect/?packageid=com.dotsandline.carbon"
         }});
     },
     listApplicationsSuccess: function (inSender, inResponse) {
