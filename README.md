@@ -1,3 +1,9 @@
+About this repository
+=====================
+
+This repository is for the Pre 2 and 3 build. Pre 1 support might be coming but I'm not sure it'll fit on the screen yet.
+Since there have to be interface changes I've set this up as a seperate repo instead of making the original one hybrid.
+
 isis-browser 
 ============
 
