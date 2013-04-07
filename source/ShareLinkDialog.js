@@ -12,6 +12,7 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.
 
+//   Defining the Share dialog and what apps reside in it
 enyo.kind({
     name: "ShareLinkDialog",
     kind: "AcceptCancelPopup",
@@ -152,15 +153,20 @@ enyo.kind({
         var shareService = this.SHARE_LINK_LIST[inEvent.rowIndex];
         var shareServiceType = shareService.type;
 
+//Check whether the apps and their subsequental service are installed
+//and give the option to download if necessary
         if (!shareService.exists) {
             if (shareServiceType === "facebook") {
                 this.downloadFacebookApp();
             } else if (shareServiceType === "carbon") {
                 this.downloadCarbonApp();
+            }  else if (shareServiceType === "spaz") {
+                this.downloadSpazApp();
             }
             return true;
         }
-        
+
+       //Call the service to share the current link 
         if (shareServiceType === "email") {
             this.shareLinkViaEmail();
         } else if (shareServiceType === "messaging") {
@@ -250,31 +256,6 @@ enyo.kind({
         if (!foundFacebook) {
             this.SHARE_LINK_LIST.some(function (shareService, index) {
                 if (shareService.title === "Facebook") {
-                    shareService.exists = false;
-                    shareService.checkExistance = false;
-                    this.$.shareList.renderRow(index);
-                }
-            }, this);
-        }
-
-        foundSparrow = apps.some(function (app) {
-            this.log(enyo.json.stringify(app));
-            if (app.id === "com.appstuh.sparrow") {
-
-                this.SHARE_LINK_LIST.some(function (shareService, index) {
-                    if (shareService.title === "Sparrow") {
-                        shareService.exists = true;
-                        shareService.checkExistance = false;
-                        this.$.shareList.renderRow(index);
-                    }
-                }, this);
-                return true;
-            }
-        }, this);
-
-        if (!foundSparrow) {
-            this.SHARE_LINK_LIST.some(function (shareService, index) {
-                if (shareService.title === "Sparrow") {
                     shareService.exists = false;
                     shareService.checkExistance = false;
                     this.$.shareList.renderRow(index);
