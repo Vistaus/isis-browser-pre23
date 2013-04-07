@@ -39,7 +39,13 @@ enyo.kind({
         image: "images/icons/facebook-32x32.png",
         type: "facebook",
         checkExistance: true
+    },{
+        title: "Spaz",
+        image: "images/icons/sparrow-32x32.png",
+        type: "spaz",
+        checkExistance: "true"
     }],
+
     components: [{
 		name: "appCatalogService",
         kind: enyo.PalmService,
@@ -163,6 +169,8 @@ enyo.kind({
             this.shareLinkViaFacebook();
           } else if (shareServiceType === "carbon") {
           this.shareLinkViaCarbon();
+          } else if (shareServiceType === "spaz") {
+          this.shareLinkViaSpaz();
           }
         this.close();
     },
@@ -197,6 +205,13 @@ enyo.kind({
         };
         this.$.launchApplicationService.call({id: "com.palm.app.facebook", params: params});
     },
+        shareLinkViaSpaz: function () {
+          var params = {
+          action: "post",
+          tweet: "Check out this web page: " + this.url
+          };
+          this.$.launchApplicationService.call({id: "com.funkatron.app.spaz", params: params});
+        },
     downloadFacebookApp: function () {
         this.log("Launching app catalog to download facebook");
         this.$.appCatalogService.call({id: "com.palm.app.enyo-findapps", params: {
@@ -209,6 +224,12 @@ enyo.kind({
             target: "http://developer.palm.com/appredirect/?packageid=com.dotsandline.carbon"
         }});
     },
+    downloadSpazApp: function () {
+        this.log("Launching app catalog to download Spaz");
+        this.$.appCatalogService.call({id: "com.palm.app.enyo-findapps", params: {
+            target: "http://developer.palm.com/appredirect/?packageid=com.funkatron.app.spaz"
+        }});
+
     listApplicationsSuccess: function (inSender, inResponse) {
         var apps = inResponse.apps;
         foundFacebook = apps.some(function (app) {
@@ -254,6 +275,56 @@ enyo.kind({
         if (!foundSparrow) {
             this.SHARE_LINK_LIST.some(function (shareService, index) {
                 if (shareService.title === "Sparrow") {
+                    shareService.exists = false;
+                    shareService.checkExistance = false;
+                    this.$.shareList.renderRow(index);
+                }
+            }, this);
+        }
+
+        foundCarbon = apps.some(function (app) {
+            this.log(enyo.json.stringify(app));
+            if (app.id === "com.dotsandlines.carbon") {
+
+                this.SHARE_LINK_LIST.some(function (shareService, index) {
+                    if (shareService.title === "Carbon") {
+                        shareService.exists = true;
+                        shareService.checkExistance = false;
+                        this.$.shareList.renderRow(index);
+                    }
+                }, this);
+                return true;
+            }
+        }, this);
+
+        if (!foundCarbon) {
+            this.SHARE_LINK_LIST.some(function (shareService, index) {
+                if (shareService.title === "Carbon") {
+                    shareService.exists = false;
+                    shareService.checkExistance = false;
+                    this.$.shareList.renderRow(index);
+                }
+            }, this);
+        }
+
+        foundSpaz = apps.some(function (app) {
+            this.log(enyo.json.stringify(app));
+            if (app.id === "com.funkatron.app.spaz") {
+
+                this.SHARE_LINK_LIST.some(function (shareService, index) {
+                    if (shareService.title === "Spaz") {
+                        shareService.exists = true;
+                        shareService.checkExistance = false;
+                        this.$.shareList.renderRow(index);
+                    }
+                }, this);
+                return true;
+            }
+        }, this);
+
+        if (!foundSpaz) {
+            this.SHARE_LINK_LIST.some(function (shareService, index) {
+                if (shareService.title === "Spaz") {
                     shareService.exists = false;
                     shareService.checkExistance = false;
                     this.$.shareList.renderRow(index);
