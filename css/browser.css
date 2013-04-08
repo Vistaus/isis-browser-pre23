@@ -44,7 +44,7 @@
 /* AddressBar */
 
 .actionbar.enyo-toolbar {
-	height: 54px;
+	height: 64px;
 	border-width: 2px 0;
 }
 
@@ -71,11 +71,12 @@
 }
 
 .addressbar {
-	margin: 0 10px;
+	margin: 0 16px;
 }
 
 .addressbar input {
-	font-size: 15px;
+	height: 42px;
+	font-size: 20px;
 	color: #ccc;
 }
 
@@ -84,6 +85,7 @@
 }
 
 .addressbar .enyo-input.enyo-tool-input .enyo-input-input:focus {
+	font-size: 20px;
 	color: #e5e5e5;
 }
 
@@ -188,7 +190,7 @@
 .url-progress.enyo-progress-bar {
 	-webkit-border-image: none;
 	border-width: 0;
-	height: 4px;
+	height: 6px;
 	background: url(../images/chrome/progress-bar.png) 0 0 repeat-x;
 	width: 100%;
 	z-index: 10;
@@ -204,7 +206,7 @@
 .url-progress .enyo-progress-bar-inner {
 	-webkit-border-image: none;
 	margin: 0;
-	height: 4px;
+	height: 6px;
 	background: url(../images/chrome/progress-bar-inner.png) 0 0 repeat-x;
 }
 .url-progress.invisible {
@@ -252,14 +254,14 @@
 
 .item-image {
 	width: 46px;
-	height: 46px;
+	height: 56px;
 	margin: 4px;
 }
 
 .item-thumb-container {
 	position: relative;
 	width: 52px;
-	height: 52px;
+	height: 62px;
 }
 
 .item-image-frame {
@@ -267,7 +269,7 @@
 	top: 0;
 	left: 0;
 	width: 52px;
-	height: 52px;
+	height: 62px;
 	background: url(../images/bookmark-icon-frame.png) 1px 2px no-repeat;
 }
 

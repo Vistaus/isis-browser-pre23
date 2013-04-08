@@ -38,5 +38,6 @@ enyo.depends(
 	"source/NoFocusButton.js",
 	"source/clipboard.js",
 	"source/util.js",
-	"source/tld.js"
+	"source/tld.js",
+	"source/symenyo.js"
 );

@@ -21,7 +21,7 @@ enyo.kind({
 		defaultSearch: "",
 		loading: false
 	},
-	maxSearchResults: 32,
+	maxSearchResults: 15,
 	className: "addressbar",
 	events: {
 		onLoad: "",
