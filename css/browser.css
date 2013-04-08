@@ -44,7 +44,7 @@
 /* AddressBar */
 
 .actionbar.enyo-toolbar {
-	height: 64px;
+	height: 58px;
 	border-width: 2px 0;
 }
 
@@ -71,21 +71,22 @@
 }
 
 .addressbar {
-	margin: 0 16px;
+	margin: 0 4px;
 }
 
 .addressbar input {
 	height: 42px;
-	font-size: 20px;
+	font-size: 24px;
 	color: #ccc;
 }
 
 .addressbar .enyo-tool-input-focus input {
+	font-size: 22px
 	color: #333;
 }
 
 .addressbar .enyo-input.enyo-tool-input .enyo-input-input:focus {
-	font-size: 20px;
+	font-size: 22px;
 	color: #e5e5e5;
 }
 
