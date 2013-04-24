@@ -31,8 +31,8 @@ enyo.kind({
         onAddressInputBlurred: ""
 	},
 	components: [
-		{name: "bookmarksService", kind: "DbService", method: "search", dbKind: "com.palm.browserbookmarks:1", onSuccess: "gotBookmarksData", onFailure: "finishShowSearchResults"},
-		{name: "historyService", kind: "DbService", method: "search", dbKind: "com.palm.browserhistory:1", onSuccess: "gotHistoryData", onFailure: "finishShowSearchResults"},			
+		{name: "bookmarksService", kind: "DbService", method: "search", dbKind: "com.junoavalon.isisprebrowserbookmarks:1", onSuccess: "gotBookmarksData", onFailure: "finishShowSearchResults"},
+		{name: "historyService", kind: "DbService", method: "search", dbKind: "com.junoavalon.isisprebrowserhistory:1", onSuccess: "gotHistoryData", onFailure: "finishShowSearchResults"},			
 		{name: "address", kind: "AddressInput", flex: 1, hint: $L("Enter URL or search terms"),
 			onInputChange: "startSearch",
 			onGo: "go",

@@ -121,7 +121,7 @@ enyo.kind({
 		this.searchPreferencesChanged();
 		this.defaultSearchChanged();
 		if (window.PalmSystem) {
-			this.$.view.setIdentifier(enyo.windowParams.webviewId);
+		this.$.view.setIdentifier(enyo.windowParams.webviewId);
 		}
 	},
 	resize: function() {

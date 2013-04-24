@@ -1,0 +1,8 @@
+{
+	"id":"com.junoavalon.isisprebrowserpreferences:1",
+	"owner":"com.junoavalon.app.isisprebrowser",
+	"indexes": [
+		{"name":"key", "props":[{"name":"key"}]}
+	],
+	"sync": true
+}

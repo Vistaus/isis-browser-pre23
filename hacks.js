@@ -2,7 +2,7 @@ var hacks_deviceInfo = enyo.fetchDeviceInfo();
 var hacks_isPhone = window.PalmSystem && hacks_deviceInfo.platformVersionMajor <= 2;
 if (typeof(window.zoomFactor) === "undefined") {
    window.zoomFactor = 1;
-};
+}
 if (hacks_isPhone) {
    enyo.WebView.prototype.layoutKind = "HFlexLayout";
    enyo.WebView.prototype.chrome[0] = {

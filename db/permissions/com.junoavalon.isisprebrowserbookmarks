@@ -1,0 +1,39 @@
+[	
+	{	"type"		: "db.kind"
+	,	"object"	: "com.junoavalon.isisprebrowserbookmarks:1"
+	,	"caller"	: "com.junoavalon.app.isisprebrowser"
+	,	"operations":
+		{	"create": "allow"
+		,	"read"	: "allow"
+		,	"update": "allow"
+		,	"delete": "allow"
+		}
+	},
+	{	"type"		: "db.kind"
+	,	"object"	: "com.junoavalon.isisprebrowserbookmarks:1"
+	,	"caller"	: "com.palm.launcher"
+	,	"operations":
+		{	"read"	: "allow"
+		}
+	},
+	{	"type"		: "db.kind"
+	,	"object"	: "com.junoavalon.isisprebrowserbookmarks:1"
+	,	"caller"	: "com.palm.service.customization"
+	,	"operations":
+		{	"create": "allow"
+		,	"read"	: "allow"
+		,	"update": "allow"
+		,	"delete": "allow"
+		}
+	},
+	{	"type"		: "db.kind"
+	,	"object"	: "com.junoavalon.isisprebrowserbookmarks:1"
+	,	"caller"	: "com.junoavalon.app.isisprebrowser"
+	,	"operations":
+		{	"create": "allow"
+		,	"read"	: "allow"
+		,	"update": "allow"
+		,	"delete": "allow"
+		}
+	}
+]
