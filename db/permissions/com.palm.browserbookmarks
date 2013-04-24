@@ -28,7 +28,7 @@
 	},
 	{	"type"		: "db.kind"
 	,	"object"	: "com.palm.browserbookmarks:1"
-	,	"caller"	: "com.junoavalon.app.isisbrowser"
+	,	"caller"	: "com.junoavalon.app.isisprebrowser"
 	,	"operations":
 		{	"create": "allow"
 		,	"read"	: "allow"

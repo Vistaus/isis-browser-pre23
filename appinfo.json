@@ -1,5 +1,5 @@
 {
-	"id": "com.junoavalon.app.isisbrowser",
+	"id": "com.junoavalon.app.isisprebrowser",
 	"version": "2.5.0",
 	"vendor": "Juno Avalon",
 	"type": "web",
@@ -13,7 +13,7 @@
 	"universalSearch": {
 		"dbsearch": {
 			"displayName":"Bookmarks & History",
-			"url":"com.junoavalon.app.isisbrowser",
+			"url":"com.junoavalon.app.isisprebrowser",
 			"launchParam":"url",
 			"launchParamDbField":"url",
 			"displayFields": ["title", "url"],

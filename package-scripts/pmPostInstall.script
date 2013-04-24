@@ -4,15 +4,15 @@
 mount -o remount,rw /
 
 # Check if files already replaced
-if [ ! -f /media/cryptofs/apps/usr/palm/applications/com.junoavalon.app.isisbrowser/db/permissions/com.palm.browserbookmarks.old ];
+if [ ! -f /media/cryptofs/apps/usr/palm/applications/com.junoavalon.app.isisprebrowser/db/permissions/com.palm.browserbookmarks.old ];
 then
 	# Back up original perms
-	mv /etc/palm/db/permissions/com.palm.browserbookmarks /media/cryptofs/apps/usr/palm/applications/com.junoavalon.app.isisbrowser/db/permissions/com.palm.browserbookmarks.old
-	mv /etc/palm/db/permissions/com.palm.browserhistory /media/cryptofs/apps/usr/palm/applications/com.junoavalon.app.isisbrowser/db/permissions/com.palm.browserhistory.old
+	mv /etc/palm/db/permissions/com.palm.browserbookmarks /media/cryptofs/apps/usr/palm/applications/com.junoavalon.app.isisprebrowser/db/permissions/com.palm.browserbookmarks.old
+	mv /etc/palm/db/permissions/com.palm.browserhistory /media/cryptofs/apps/usr/palm/applications/com.junoavalon.app.isisprebrowser/db/permissions/com.palm.browserhistory.old
 
 	# Move new perms
-	cp /media/cryptofs/apps/usr/palm/applications/com.junoavalon.app.isisbrowser/db/permissions/com.palm.browserbookmarks /etc/palm/db/permissions/com.palm.browserbookmarks
-	cp /media/cryptofs/apps/usr/palm/applications/com.junoavalon.app.isisbrowser/db/permissions/com.palm.browserhistory /etc/palm/db/permissions/com.palm.browserhistory
+	cp /media/cryptofs/apps/usr/palm/applications/com.junoavalon.app.isisprebrowser/db/permissions/com.palm.browserbookmarks /etc/palm/db/permissions/com.palm.browserbookmarks
+	cp /media/cryptofs/apps/usr/palm/applications/com.junoavalon.app.isisprebrowser/db/permissions/com.palm.browserhistory /etc/palm/db/permissions/com.palm.browserhistory
 	
 	luna-send -n 1 palm://com.palm.configurator/run '{"types":["dbpermissions"]}'
 fi

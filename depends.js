@@ -13,6 +13,7 @@
 //   limitations under the License.
 
 enyo.depends(
+	"hacks.js",
 	"$enyo-lib/printdialog/",
 	"css/browser.css",
 	"source/ActionBar.js",

@@ -8,8 +8,8 @@ rm /etc/palm/db/permissions/com.palm.browserbookmarks
 rm /etc/palm/db/permissions/com.palm.browserhistory
 
 # Restore orig perms
-mv /media/cryptofs/apps/usr/palm/applications/com.junoavalon.app.isisbrowser/db/permissions/com.palm.browserbookmarks.old /etc/palm/db/permissions/com.palm.browserbookmarks
-mv /media/cryptofs/apps/usr/palm/applications/com.junoavalon.app.isisbrowser/db/permissions/com.palm.browserhistory.old /etc/palm/db/permissions/com.palm.browserhistory
+mv /media/cryptofs/apps/usr/palm/applications/com.junoavalon.app.isisprebrowser/db/permissions/com.palm.browserbookmarks.old /etc/palm/db/permissions/com.palm.browserbookmarks
+mv /media/cryptofs/apps/usr/palm/applications/com.junoavalon.app.isisprebrowser/db/permissions/com.palm.browserhistory.old /etc/palm/db/permissions/com.palm.browserhistory
 
 luna-send -n 1 palm://com.palm.configurator/run '{"types":["dbpermissions"]}'
 
