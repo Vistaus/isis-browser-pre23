@@ -1,6 +1,6 @@
 {
 	"id": "com.junoavalon.app.isisprebrowser",
-	"version": "2.5.0",
+	"version": "0.0.1",
 	"vendor": "Juno Avalon",
 	"type": "web",
 	"main": "index.html",
